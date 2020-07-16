@@ -1,0 +1,36 @@
+/* tag selector */ 
+
+h2{
+    color: green
+}
+span{
+    color: purple
+}
+h1{
+    color: grey;
+    font-size:200%
+}
+
+/* id selector */
+#intro {
+    background-color: yellow;
+}
+
+/* class selector */
+.content{       /* will change anything in .content to desired colour */
+    background-color: wheat;
+}
+
+span.content{
+    text-decoration: underline;
+}
+
+/* contextual selector */
+div h2{
+    font-size: 33px;
+}
+
+/* grouping selectors */ 
+h1, h2 {
+    text-align: center;
+}

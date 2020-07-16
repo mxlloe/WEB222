@@ -1,0 +1,132 @@
+<!-- DOM TREE-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is a Document!</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Welcome!</h1>
+        <p>This is a paragraph with a <a href="index.html">link</a> in it.</p>
+        <ul>
+            <li>first item</li>
+            <li>second item</li>
+            <li>third item</li>
+        </ul>
+    </body>
+</html>
+
+<!-- access document object for web page which is in current window-->
+var document = window.document;
+
+<!-- get value of docs <title>-->
+var title = document.title;
+
+<!-- return reference to docs <body> element-->
+var body = document.body;
+
+<!-- return list of all <img> elements in the docs-->
+var images = document.images;
+
+<!-- creating elements and modifying the dom with JS-->
+
+<!--document.createElement(name) - creates and returns a new element of the type specified by name. -->
+  var paragraphElement = document.createElement('p');
+  var imageElement = document.createElement('img');
+
+document.createTextNode(text) - creates a text node (the text within an element vs. the element itself).
+  var textNode = document.createTextNode('This is some text to show in an element');
+
+<!-- these methods create new nodes but do not place them into the page
+    to do that, fine the correct position withing the existing dDOM tree and add our node.
+gotta be clear where we want the new element to get placed in the DOM
+
+
+for example: if u wantto place node at end of <body>, use .appendChild()-->
+
+    var paragraphElement = document.createElement('p');
+    document.body.appendChild(paragraphElement);
+
+<!-- if instead place within existing <div id = "content">, do: -->
+    var paragraphElement = document.createElement('p');
+    var contentDiv = document.querySelector('#content');
+    contentDiv.appendChild(paragraphElement);
+    
+
+
+<!-- you can also used .insertBefore(new, old) to do something similar, add new node before 
+old (existing) node in the DOM-->
+
+var paragraphElement = document.createElement('p');
+var contentDiv = document.querySelector('#content');
+var firstDivParagraph = contentDiv.querySelector('p');
+contentDiv.insertBefore(paragraphElement, firstDivParagraph);
+
+<!-- Removing a node is similar, and uses removeChild(): -->
+
+// Remove a loading spinner
+var loadingSpinner = document.querySelector('#loading-spinner');
+// Get a reference to the loading spinner's parent element
+var parent = loadingSpinner.parentNode;
+parent.removeChild(loadingSpinner);
+
+<!-- EXAMPLES-->
+
+Add a new heading to a document
+ // Create a new <h2> element
+ var newHeading = document.createElement('h2');
+
+ // Add some text to the <h2> element we just created.
+ // Similar to doing <h2>This is a heading</h2>.
+ var textNode = document.createTextNode('This is a heading');
+ // Add the textNode to the heading's child list
+ newHeading.appendChild(textNode);
+
+ // Insert our heading into the document, at the end of <body>
+ document.body.appendChild(newHeading);
+Create a new paragraph and insert into the document
+ <div id="demo"></div>
+ <script>
+     // Create a <p> element
+     var pElem = document.createElement('p');
+
+     // Use .innerHTML to create text nodes inside our <p>...</p>
+     pElem.innerHTML = 'This is a paragraph.';
+
+     // Get a reference to our <div> with id = demo
+     var demoDiv = document.querySelector('#demo');
+
+     // Append our <p> element to the <div>
+     demoDiv.appendChild(pElem);
+ </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- dom events:
+
+- anythign that happens in a browser may be called an event -->
+
+<!-- common events:
+
+- events triggered by users
+- events not cuased by the user (page finished loading is an example) -->
+
+<!-- 3 ways to handle an event: -->
+
+<h1> id = "course name" Web222!!!</h1>
+
+

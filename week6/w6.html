@@ -1,0 +1,59 @@
+<body>
+    <p>The <em>cow</em> jumped over the <b>moon</b>.</p>
+</body>
+
+<!-- the <p> is a block-level element -->
+<!-- <em> and <b> elements are also being used. these will affect the content but
+    not create a new block; but continue to flow in their inline container (the <p> element)-->
+
+
+<!-- grouping elements-->
+
+    <header> - introductory material at the top of a
+    <nav> - content related to navigation (a menu, index, links, etc)
+    <main> - the main content of the document.
+    <article> - a self-contained composition, such as a blog post, article, etc.
+    <section> - a group of related elements in a document representing one section of a whole
+    <footer> - end material (author, copyright, links)
+
+<div> - a generic block-level container
+<span> - a generic inline container
+
+<!-- tables -->
+<table> - the root of a table in HTML
+    <caption> - the optional title (or caption) of the table
+    <thead> - row(s) at the top of the table (header row or rows)
+    <tbody> - rows that form the main body of the table (the table’s content rows)
+    <tfoot> - row(s) at the bottom of the table (footer row or rows)
+
+We define rows and columns of data within the above using the following:
+    
+    <tr> - a single row in a table
+    <td> - a single cell (row/column intersection) that contains table data
+    <th> - a header (e.g., a title for a column)
+
+<!-- multimedia shit <img> <audio> <video>-->
+ 
+<img src = "url here">  <!-- external image url full width of browser-->
+
+<img src="dog.jpg" alt="Pic of dog" widht="400"> <!-- local file, 400 pixels wide-->
+
+
+<!-- html5 recently added the <picture> element to allow optimate image type-->
+
+<!-- No controls, music will just auto-play in the background. Only MP3 source provided -->
+<audio src="https://ia800607.us.archive.org/15/items/music_for_programming/music_for_programming_1-datassette.mp3" autoplay></audio>
+
+<!-- Audio with controls showing, multiple formats available -->
+<audio controls>
+    <source src="song.mp3" type="audio/mp3">
+    <source src="song.ogg" type="audio/ogg">
+    <p>Sorry, your browser doesn't support HTML5 audio. Here is a <a href="song.mp3">link to the audio</a> instead</p>.
+</audio>
+
+<!-- inline scrips (<script>)-->
+    <script>
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    </script>
+
+    
